@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Create a task
+{% endblock %}
+
+{% block content %}
+    <h1>Create the task</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-success mt-100">ADD</button>
+         </div>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
